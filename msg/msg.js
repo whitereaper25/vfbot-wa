@@ -27,7 +27,7 @@ exports.adminOnly = () => {
 
 exports.menu = (pushname) => {
     return `
-╠══★〘 VF BOT-WA 〙★══
+╠══★〘 black trigger -WA 〙★══
 ║
 ╠☞ Nama: *${pushname}*
 ║
@@ -96,7 +96,7 @@ exports.menu = (pushname) => {
 ╠☞ *${prefix}kodepos*
 ╠☞ *${prefix}nulis*
 ║
-║══★〘 VIDE FIKRI BOT 〙★══
+║══★〘 black trigger BOT 〙★══
 `
 }
 exports.menuAdmin = () => {
