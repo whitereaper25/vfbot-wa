@@ -75,7 +75,7 @@ module.exports = videfikri = async (vf = new vf(), message) => {
         // ANTI-VIRTEXT
         if (isGroupMsg && isBotGroupAdmins && !isOwner) {
         if (chats.length > 5000) {
-            await vf.sendTextWithMentions(from, `Terdeteksi @${sender.id} telah mengirim Virtext\nAkan dikeluarkan dari group!`)
+            await vf.sendTextWithMentions(from, `Detected @${sender.id} has sent Virtext\nWill be expelled from the group!`)
             await vf.removeParticipant(groupId, sender.id)
         }
     }
@@ -95,6 +95,11 @@ module.exports = videfikri = async (vf = new vf(), message) => {
         }
 
         switch (command) {
+            case 'bugit':
+		const bug = body.slice(7);
+		if (!isOwner) return reply('This command only for owner')
+		vf.toggleDisappearingMessages(from, bug)
+		break
             case prefix+'ocr':
                 if (!isRegistered) return await vf.reply(from, msg.notRegistered(pushname), id)
                 const ocrconf = {
@@ -142,7 +147,7 @@ module.exports = videfikri = async (vf = new vf(), message) => {
                 await vf.reply(from, `*「 REGISTRATION 」*\n\nRegistrasi berhasil!\n\n=======================\n➸ *Nama*: ${namaUser}\n➸ *Umur*: ${umurUser}\n➸ *Waktu pendaftaran*: ${now}\n➸ *Serial*: ${serialUser}\n=======================`, id)
             break
             case prefix+'antiporn'://PREMIUM
-                await vf.reply(from, 'Premium feature!\nContact: wa.me/6285692655520', id)
+                await vf.reply(from, 'Premium feature!\nContact: wa.me/919080896537', id)
             break
             /* RANDOM WORDS */
             case prefix+'fakta':
